@@ -19,7 +19,7 @@ export default function NavigationTabs() {
 
     return (
     <nav className="flex flex-col bg-cyan-800 space-x-4 p-4 w-min rounded-3xl	h-[calc(100vh-50px)]">
-      <img src="/mainWeatherIcon.svg" alt="Weather icon" className="w-20 h-20 mx-auto"></img>
+      <img src="/mainWeatherIcon.svg" alt="Weather icon" className="w-20 h-20 mx-auto mb-8"></img>
       {tabs.map((tab) => (
         <Link
           key={tab.path}
