@@ -1,0 +1,43 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import NavigationTabs from "@/components/NavigationTabs"; // your tab component
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Weather App",
+  description: "A sleek weather app built with Next.js and Tailwind CSS",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" >
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-gray-900 pd`}
+      >
+        <div className="flex min-h-screen bg-cyan-950 pt-5 pl-5">
+          {/* Sidebar */}
+          <aside>
+            <NavigationTabs />
+          </aside>
+
+          {/* Main content */}
+          <main className="flex-1 p-10">{children}</main>
+        </div>
+      </body>
+    </html>
+  );
+}
