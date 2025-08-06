@@ -10,6 +10,7 @@ export type WeatherData = {
   }[];
   wind: {
     speed: number;
+    feels_like:number;
   };
 };
 
