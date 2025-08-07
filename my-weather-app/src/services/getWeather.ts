@@ -3,6 +3,7 @@
 export type WeatherData = {
   main: {
     temp: number;
+    feels_like:number;
   };
   weather: {
     description: string;
@@ -10,7 +11,6 @@ export type WeatherData = {
   }[];
   wind: {
     speed: number;
-    feels_like:number;
   };
 };
 
