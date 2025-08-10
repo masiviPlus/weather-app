@@ -6,7 +6,7 @@ export default async function WeatherPage() {
   console.log(weather)
   const currentHour = new Date().getHours();
   console.log("Current hour:", currentHour);
-  const icon = (currentHour >= 6 && currentHour <= 18) ? '/sun.svg' : '/moon.svg';
+  const icon = (currentHour >= 6 && currentHour <= 18) ? '/sun.svg' : '/moon-fr.svg';
   
   return (
     <div className="mt-4 p-4 text-white">
