@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Weather App",
   description: "A sleek weather app built with Next.js and Tailwind CSS",
+  icons: {
+    icon: '/weather.svg', // or use .png, .svg, etc.
+  },
 };
 
 export default function RootLayout({
