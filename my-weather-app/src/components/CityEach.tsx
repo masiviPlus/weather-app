@@ -22,7 +22,7 @@ export default function CityEach() {
 
   const timeKey = process.env.NEXT_PUBLIC_TIME_API_KEY;
   const weatherKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
-  const city = 'moscow';
+  const city = 'tbilisi';
 
   useEffect(() => {
     if (!timeKey || !weatherKey) {
@@ -71,22 +71,25 @@ export default function CityEach() {
 
   return (
     <div>
-      <div>
-        <img src="/sun.svg" alt="Sun" className="w-[50px] h-[50px]" />
-        <h2>Moscow</h2>
+      <div className="flex flex-row justify-between pl-20 pr-20 pt-10 pb-10 mt-10 bg-cyan-800 rounded-4xl">
+        <img src="/sun.svg" alt="Sun" className="w-[150px] h-[150px]" />
+        <div>
+            <h2 className="text-[35px] text-white">Tbilisi</h2>
 
-        {error ? (
-          <p className="text-red-600">{error}</p>
-        ) : (
-          <>
-            <h2>
-              {time ? `${time.hour}:${String(time.minute).padStart(2, '0')}` : 'Loading...'}
-            </h2>
-            <h3>
-              {weather ? `${Math.floor(weather.main.temp)} °🌡` : '— °🌡'}
-            </h3>
-          </>
-        )}
+          {error ? (
+            <p className="text-red-600">{error}</p>
+          ) : (
+            <>
+              <h2 className="text-[25px]">
+                {time ? `${time.hour}:${String(time.minute).padStart(2, '0')}` : 'Loading...'}
+              </h2>
+              <h3 className="text-[35px]">
+                {weather ? `${Math.floor(weather.main.temp)} °🌡` : '— °🌡'}
+              </h3>
+            </>
+          )}
+        </div>
+        
       </div>
     </div>
   );
